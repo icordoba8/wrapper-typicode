@@ -26,8 +26,8 @@ app.use("/", (req: Request, res:Response) => {
     res.json('0k')
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   //console.log(`server started at http://localhost:${PORT}`);
 });
 
-export default app;
+export default server;
