@@ -51,7 +51,7 @@ Se recomienda correr tes por acrivo por el momento hay un incoveniente con el pu
 
 ```
 
-# Listar a los usuarios
+# Listar los usuarios
 
 ```
 GET: api/users
@@ -72,9 +72,9 @@ Response lista de publicaciones
 # Consultar fotos de un usuario
 
 ```
-GET: api/photos/users/<string id>
+GET: api/photos/users/<number id>
 /*
- @param <string> id required
+ @param <number> id required
  *
 */
 
