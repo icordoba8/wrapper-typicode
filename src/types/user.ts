@@ -1,0 +1,32 @@
+interface Geolocation {
+    lat:string,
+    lng: string
+}
+
+interface Address {
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo: Geolocation
+}
+
+interface Company {
+    name: string,
+    catchPhrase: string,
+    bs: string,
+}
+
+interface User {
+    le: any;
+    id:number,
+    name: string,
+    username: string,
+    email: string,
+    address:Address,
+    phone: string,
+    website: string,
+    company: Company,
+}
+
+export {User}
