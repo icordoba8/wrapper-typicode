@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
     "build": "tsc",
-    "test": "cross-env NODE_ENV=test jest --verbose --watchAll"
+    "test": "cross-env NODE_ENV=test  API=https://jsonplaceholder.typicode.com USER=wrapper-typicode PASSWORD=fYW2hLZsJtABDTEg HOST=cluster0.5qp9r.mongodb.net  DB=wrapper-typicode jest --verbose "
   },
   "author": "Isabelino cordoba palacios",
   "license": "ISC",
@@ -17,13 +17,15 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
     "@jest/types": "^27.0.6",
+    "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.11",
@@ -36,8 +38,9 @@
     "typescript": "^4.2.4"
   },
   "jest": {
+    "verbose": true,
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\.ts?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$",
     "moduleFileExtensions": [
