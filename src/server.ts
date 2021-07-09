@@ -19,15 +19,14 @@ const corsOptionsDelegate = (req: Request, callback: any) => {
 };
 
 app.use(cors(corsOptionsDelegate));
-
-
+//Importamos las rutas de la api
+import apiRouter from "./api";
+app.use("/api", apiRouter);
 const PORT = process.env.PORT || 8080;
-app.use("/", (req: Request, res:Response) => {
-    res.json('0k')
-});
-
-const server = app.listen(PORT, () => {
-  //console.log(`server started at http://localhost:${PORT}`);
-});
+// app.use("/", (req: Request, res:Response) => {
+//     res.json('0k')
+// });
+app.use("/api", apiRouter);
+const server = app.listen(PORT, () => console.log(`server started at http://localhost:${PORT}`));
 
 export default server;
