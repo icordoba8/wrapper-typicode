@@ -86,7 +86,11 @@ Response: lista de fotos del id usduario enviado
 # Listar Registros de peticiones realizadas.
 
 ```
-PUT: /api/records
+PUT: /api/records/<string id>
+/*
+ @param <string> id required
+ *
+*/
 200 OK
 
 ```
@@ -95,5 +99,9 @@ PUT: /api/records
 
 ```
 DELETE: /api/records/<string id>
+/*
+ @param <string> id required
+ *
+*/
 200 OK
 ```
