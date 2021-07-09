@@ -18,7 +18,6 @@ interface Company {
 }
 
 interface User {
-    le: any;
     id:number,
     name: string,
     username: string,
