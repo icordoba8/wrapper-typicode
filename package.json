@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
     "build": "tsc",
-    "test": "cross-env NODE_ENV=test  API=https://jsonplaceholder.typicode.com USER=wrapper-typicode PASSWORD=fYW2hLZsJtABDTEg HOST=cluster0.5qp9r.mongodb.net  DB=wrapper-typicode jest --verbose "
+    "test": "cross-env NODE_ENV=test  API= USER= PASSWORD= HOST=  DB= jest --verbose "
   },
   "author": "Isabelino cordoba palacios",
   "license": "ISC",
