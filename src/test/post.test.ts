@@ -1,22 +1,23 @@
 import request from "supertest";
-import app from "../server";
+import app from "../app";
 import mongoose from "mongoose";
-const api = request(app);
+
 const {USER,PASSWORD,HOST,DB }: any = process.env;
 beforeEach((done) => {
 	mongoose.connect(`mongodb+srv://${USER}:${PASSWORD}@${HOST}/${DB}?retryWrites=true&w=majority`,
-		 { useNewUrlParser: true, useUnifiedTopology: true },
+		{ useNewUrlParser: true, useUnifiedTopology: true },
 		() => done()
   )
  
 })
+
 afterEach((done) => {
   mongoose.disconnect(()=>done())
 })
 
 describe("GET /posts", function () {
   it("Respueta status 200 y array de publicaciones", async function () {
-   await api
+   await request(app)
       .get("/api/posts")
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)

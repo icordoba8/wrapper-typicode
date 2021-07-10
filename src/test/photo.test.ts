@@ -1,7 +1,7 @@
 import request from "supertest";
-import app from "../server";
 import mongoose from "mongoose";
-const api = request(app);
+import app from "../app";
+
 const {USER,PASSWORD,HOST,DB }: any = process.env;
 beforeEach((done) => {
   mongoose.disconnect();
@@ -9,7 +9,7 @@ beforeEach((done) => {
 		{ useNewUrlParser: true,useUnifiedTopology: true },
 		() => done()
   )
- 
+
 })
 afterEach((done) => {
   mongoose.disconnect(() => done())
@@ -17,7 +17,7 @@ afterEach((done) => {
 
 describe("GET /photos usuarios", function () {
   it("Respueta status 200 y array de photos", async function () {
-   await api
+    await request(app)
       .get("/api/photos/users/1")
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
@@ -27,5 +27,4 @@ describe("GET /photos usuarios", function () {
         expect(response.body.length).not.toEqual(0)
 		})
   });
-
 });
