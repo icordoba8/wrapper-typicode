@@ -1,9 +1,9 @@
 import request from "supertest";
 import mongoose from "mongoose"
 
-import app from "../app";
-import { RecordAction } from "../libs";
-import RecordRequestModel from "../db/models/recordrequest";
+import app from "../../app";
+import { RecordAction } from "../../libs";
+import RecordRequestModel from "../../db/models/recordrequest";
 const { USER, PASSWORD, HOST, DB, API }: any = process.env;
  
 var req:any  =  {

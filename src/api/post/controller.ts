@@ -12,7 +12,7 @@ class PostController {
             new RecordAction(req,data).save();
             res.json(data);
         } catch (error) {
-           res.json(Utils.error(error));
+          res.status(404).json(Utils.error(error));
         }
     }
 }

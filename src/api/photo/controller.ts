@@ -13,7 +13,7 @@ class PhotoController {
             const { data: albums }:any = await axios.get<Album>(`${API}/albums`);
             const { data: photos }: any = await axios.get<Photo>(`${API}/photos`);
             
-            const userPhotos = await new PhotoUser(albums, photos, id).get();
+            const userPhotos = await new PhotoUser(albums, photos,  parseInt(id)).get();
             if (userPhotos.length > 0) {
                 new RecordAction(req, userPhotos).save();
             }
@@ -21,7 +21,7 @@ class PhotoController {
             return  res.json(userPhotos);
            
         } catch (error) {
-           res.json(Utils.error(error));
+           res.status(404).json(Utils.error(error));
         }
     }
 }

@@ -9,7 +9,7 @@ class Utils {
  */
 
   static row = (items: any, position?: number) => {
-    let item: any;
+    let item:Object = {};
     if (Array.isArray(items)) {
       position = position ? position : 0;
       item = items[position];

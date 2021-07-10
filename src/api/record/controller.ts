@@ -20,7 +20,7 @@ class RecordController {
            res.json(action);
 
         } catch (error) {
-           res.json(Utils.error(error));
+           res.status(404).json(Utils.error(error));
         }
     }
 
@@ -31,7 +31,7 @@ class RecordController {
             res.json(action);
 
         } catch (error) {
-           res.json(Utils.error(error));
+          res.status(404).json(Utils.error(error));
         }
     }
 

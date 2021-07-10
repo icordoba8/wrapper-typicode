@@ -6,16 +6,19 @@ class PhotoUser {
    
     public albums:Album[]  = [];
     public photos: Photo[] = [];
-    public id :any;
-    constructor(albums:any , photos:any,id:any) {
+    public id :number;
+    constructor(albums:Array<Album> , photos:Array<Photo>,id:number) {
         this.albums = albums;
         this.photos = photos;
         this.id = id;
     }
     async get() {
-        this.albums = this.albums.filter((item: Album) => item.userId == this.id);
-        const album: Album = Utils.row(this.albums);
-        this.photos = this.photos.filter((item: Photo) => item.albumId == album.id);
+        if (this.albums.length>0 && this.photos.length>0 && this.id ) 
+        {
+            this.albums = this.albums.filter((item: Album) => item.userId === this.id);
+            const album:any = Utils.row(this.albums);
+            this.photos = this.photos.filter((item: Photo) => item.albumId === album.id);
+        }
         return this.photos;
     }
     
