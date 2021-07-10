@@ -2,6 +2,8 @@
 
 Esta es una pai que nos permite extraer información de la Api https://jsonplaceholder.typicode.com/ se procesa y se guarda en una base de datos mongodb,
 
+Documentacíon https://app.swaggerhub.com/apis-docs/icadigital/wrapper-typicode/1.0.0
+
 A continuación, tenemos una secuencia de comnados a utilizar antes de subir el server de la api.
 
 # Crear archivo para las variables de entrono
