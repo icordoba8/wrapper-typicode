@@ -47,7 +47,9 @@ npm start
 ```
 npm test
 
-NOTA: configura las variables de entorno en el comando test en el packaje.json estas variables de entorno seran  paralos test ya que al monento de ejecutar los test no reconoce las variables definidas en el, archivo .env las varibles definidas para los test o pruebas  deben de ser datos locales solo para efectos de pruebas
+NOTA: configura las variables de entorno en el comando test en el packaje.json
+estas variables de entorno seran  paralos test ya que al monento de ejecutar los test no reconoce las variables definidas en el, archivo .env
+las varibles definidas para los test o pruebas  deben de ser datos locales solo para efectos de pruebas
 
 Se recomienda correr tes por acrivo por el momento hay un incoveniente con el puerto al ejecutar todos los tes y no por archivo
 
