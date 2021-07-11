@@ -48,7 +48,7 @@ class RecordController {
             const data = await excel.create(response);
             const buffer = xlsx.build([{ name: "Records", data: data }]);
             const  b64 = arraybuffer.encode(buffer)
-            res.json(data)
+            res.json(b64)
         } catch (error) {
             res.json(Utils.error(error));
         }

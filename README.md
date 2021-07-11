@@ -86,13 +86,18 @@ Response: lista de fotos del id usduario enviado
 # Listar Registros de peticiones realizadas.
 
 ```
-PUT: /api/records/<string id>
-/*
- @param <string> id required
- *
-*/
+GET: /api/records/
 200 OK
 
+```
+
+# Ecportar Registros de peticiones realizadas.
+
+```
+GET: /api/records/
+200 OK
+
+Response string excel base 64
 ```
 
 # Editar registro de una petición
