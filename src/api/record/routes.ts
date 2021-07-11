@@ -5,6 +5,7 @@ import RecordController from "./controller";
 
 //Rutas de la clase RecordController
 router.get("/records", RecordController.getRecords);
+router.get("/records/export", RecordController.exportRecords);
 router.put("/records/:id", RecordController.updateRecord);
 router.delete("/records/:id", RecordController.removeRecord);
 

@@ -1,6 +1,11 @@
 import axios from "axios";
 import { Request, Response } from "express";
+import xlsx from 'node-xlsx';
+
+import arraybuffer from "base64-arraybuffer";
+
 import {RecordAction, Utils} from "../../libs";
+import Excel from "../../libs/excel";
 const { API }: any = process.env;
 
 class RecordController {
@@ -32,6 +37,20 @@ class RecordController {
 
         } catch (error) {
           res.status(404).json(Utils.error(error));
+        }
+    }
+
+    
+    static exportRecords = async (req: Request, res: Response) => {
+        try {
+            const response = await new RecordAction(req).get();
+            const excel = new Excel();
+            const data = await excel.create(response);
+            const buffer = xlsx.build([{ name: "Records", data: data }]);
+            const  b64 = arraybuffer.encode(buffer)
+            res.json(data)
+        } catch (error) {
+            res.json(Utils.error(error));
         }
     }
 

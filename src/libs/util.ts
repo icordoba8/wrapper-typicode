@@ -18,7 +18,7 @@ class Utils {
   };
 
   static error = (error:any) => {
-    //console.log(error)
+    console.log(error)
     return { name: "error", message: "Error procesando datos" }
   };
 }
